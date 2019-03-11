@@ -25,5 +25,19 @@ class UsersTableSeeder extends Seeder
             'youtube'=>'youtube.com'
         ]);
 
+    $admin = App\User::create([
+            'name'=>'Admin',
+            'email'=>'admin@admin.com',
+            'password'=>bcrypt('123'),
+            'admin'=>1
+        ]);
+        App\Profile::create([
+            'user_id' => $admin->id,
+            'avatar'=>'uploads/avatar/avatar.png',
+            'about'=>'describe yourself',
+            'facebook'=>'facebook.com',
+            'youtube'=>'youtube.com'
+        ]);
+
     }
 }
