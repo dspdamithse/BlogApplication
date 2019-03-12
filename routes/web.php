@@ -11,13 +11,18 @@
 |
 */
 
+
+
+Auth::routes();
 Route::get('/', [
     'uses' => 'FrontEndController@index',
     'as' => 'index'
 ]);
 
-Auth::routes();
-
+Route::get('/post/{slug}', [
+    'uses' => 'FrontEndController@singlePost',
+    'as' => 'post.single'
+]);
 
 
 Route::group(['prefix'=>'admin'], function(){
