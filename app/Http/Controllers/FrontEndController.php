@@ -11,6 +11,7 @@ use App\Tag;
 class FrontEndController extends Controller
 {
     public function index(){
+        
         return view('index')->with('title', Setting::first()->site_name)
                             ->with('categories', Category::take(5)->get())
                             ->with('first_post', Post::orderBy('created_at', 'desc')->first())
@@ -22,6 +23,7 @@ class FrontEndController extends Controller
     }
 
     public function singlePost($slug){
+
         $post = Post::where('slug', $slug)->first();
 
         $next_post = Post::where('id', '>', $post->id)->min('id');
@@ -35,6 +37,17 @@ class FrontEndController extends Controller
                              ->with('next', Post::find($next_post))
                              ->with('prev', Post::find($prev_post))
                              ->with('tags', Tag::all());
+    }
+
+    public function category($id){
+
+        $category = Category::find($id);
+
+        return view('category')->with('category', $category)
+                               ->with('title', $category->name)
+                               ->with('categories', Category::take(5)->get())
+                               ->with('settings', Setting::first())
+                               ->with('tags', Tag::all());
     }
 }
 
