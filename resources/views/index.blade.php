@@ -50,6 +50,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
+                @if($first_post)
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
@@ -98,12 +99,14 @@
                         </div>
 
                 </article>
+                @endif
             </div>
             <div class="col-lg-2"></div>
         </div>
 
         <div class="row">
             <div class="col-lg-6">
+                @if($second_post)
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
@@ -152,8 +155,10 @@
                         </div>
 
                 </article>
+                @endif
             </div>
             <div class="col-lg-6">
+                @if($third_post)
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
@@ -202,6 +207,7 @@
                         </div>
 
                 </article>
+                @endif
             </div>
         </div>
     </div>
