@@ -21,8 +21,8 @@ class UsersTableSeeder extends Seeder
             'user_id' => $user->id,
             'avatar'=>'uploads/avatar/avatar.png',
             'about'=>'describe yourself',
-            'facebook'=>'facebook.com',
-            'youtube'=>'youtube.com'
+            'facebook'=>'http://facebook.com',
+            'youtube'=>'http://youtube.com'
         ]);
 
     }

@@ -29,6 +29,11 @@ Route::get('/category/{id}', [
     'as' => 'category.single'
 ]);
 
+Route::get('/show', [
+    'uses' => 'FrontEndController@show',
+    'as' => 'show'
+]);
+
 
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/home', [
