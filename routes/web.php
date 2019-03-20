@@ -34,6 +34,11 @@ Route::get('/show', [
     'as' => 'show'
 ]);
 
+Route::get('/activityOne', [
+    'uses' => 'ActivityOneController@index',
+    'as' => 'activityOne'
+]);
+
 
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/home', [
